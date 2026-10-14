@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI｜まとめノート</title>
+<meta name="description" content="AIを学ぶより、人間を理解したほうが、AIが分かる。脳・記憶・思い出す・行動・神経に重ねたAIのしくみの地図、AIの流れ、使いこなすための考え方、AIと人・社会、AIの「今」や心地よいペースをめぐる自分の問い。AIエージェント経営のノートへの入口。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f7f8f6;--surface:#fff;--ink:#20241f;--muted:#5f665d;--faint:#99a096;--line:#e0e4dd;--accent:#a85a6c;--wash:#f6ecef}
+  @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121412;--surface:#1a1d1a;--ink:#e7ebe5;--muted:#a5aca2;--faint:#687065;--line:#2a2f29;--accent:#e3a3b2;--wash:#2a1d22}}
+  :root[data-theme="dark"]{--bg:#121412;--surface:#1a1d1a;--ink:#e7ebe5;--muted:#a5aca2;--faint:#687065;--line:#2a2f29;--accent:#e3a3b2;--wash:#2a1d22}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.95 "Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:46rem;margin:auto;padding:0 16px} @media(min-width:640px){.wrap{padding:0 24px}}
+  a{color:inherit}
+  .top{padding-top:24px}
+  .back{font-size:.75rem;color:var(--muted);text-decoration:none}.back:hover{color:var(--ink)}
+  header{padding:68px 0 44px;border-bottom:1px solid var(--line)}
+  .kicker{margin:0 0 16px;font-size:.7rem;letter-spacing:.24em;color:var(--accent);font-weight:700}
+  h1{font:600 clamp(2rem,5.6vw,3rem)/1.45 "Noto Serif JP",serif;margin:0 0 6px;letter-spacing:.04em}
+  .mn-tagline{font-family:"Noto Serif JP",serif;font-weight:500;font-size:clamp(1.05rem,2.6vw,1.4rem);line-height:1.75;margin:.1em 0 1.1em;opacity:.85}
+  .lead{margin:0;max-width:34em;color:var(--muted)}
+  .toc{display:flex;flex-wrap:wrap;gap:6px 16px;margin:24px 0 0;padding:0;list-style:none;font-size:.82rem}
+  .toc a{color:var(--accent);text-decoration:none}
+  section{padding:50px 0;border-bottom:1px solid var(--line)}
+  .sec-n{display:block;font-size:.7rem;letter-spacing:.2em;color:var(--accent);font-weight:700;margin-bottom:6px}
+  h2{font:600 1.5rem/1.5 "Noto Serif JP",serif;margin:0 0 14px;letter-spacing:.03em}
+  p{margin:0 0 16px}
+  .pull{margin:20px 0;padding:4px 0 4px 18px;border-left:2px solid var(--accent);font:500 1.1rem/1.8 "Noto Serif JP",serif}
+  .note-s{color:var(--faint);font-size:.84rem;margin:-6px 0 18px}
+  .map{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0 0}
+  @media(min-width:640px){.map{grid-template-columns:1fr 1fr}}
+  .map > div{padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:4px}
+  .map small{display:block;font-size:.66rem;letter-spacing:.16em;color:var(--accent);font-weight:700;margin-bottom:2px}
+  .map b{display:block;font-family:"Noto Serif JP",serif;font-weight:600;font-size:1.05rem;margin-bottom:4px}
+  .map p{margin:0;font-size:.9rem;color:var(--muted)}
+  .map .q{display:block;margin-top:6px;font-size:.84rem;color:var(--ink)}
+  .map a.go{display:inline-block;margin-top:8px;font-size:.8rem;color:var(--accent);text-decoration:none}
+  .scale{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:14px 0 4px;font-size:.84rem}
+  .scale span{padding:6px 12px;background:var(--wash);border-radius:999px}
+  .scale i{font-style:normal;color:var(--faint)}
+  ol.flow{list-style:none;margin:16px 0 0;padding:0;border-left:2px solid var(--line)}
+  ol.flow li{position:relative;padding:4px 0 14px 20px;font-size:.94rem}
+  ol.flow li::before{content:"";position:absolute;left:-6px;top:12px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+  ol.flow b{font-family:"Noto Serif JP",serif;font-weight:600;margin-right:8px}
+  ol.flow small{color:var(--faint);margin-right:8px}
+  ol.flow span{color:var(--muted)}
+  .tl{margin-top:8px;font-size:.88rem}.tl a{color:var(--accent)}
+  .qs{display:grid;gap:12px;margin-top:16px}
+  .qs article{padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:4px}
+  .qs h3{font:600 1.06rem/1.6 "Noto Serif JP",serif;margin:0 0 6px}
+  .qs p{margin:0 0 8px;font-size:.93rem;color:var(--muted)}
+  .qs .src{font-size:.78rem;color:var(--faint)}
+  .qs .src a{color:var(--accent);text-decoration:none;margin-right:10px}
+  .notes{border-top:1px solid var(--line)}
+  .notes a{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:baseline;padding:20px 4px;border-bottom:1px solid var(--line);text-decoration:none}
+  .notes a:hover .ttl{color:var(--accent)}
+  .notes .idx{font-family:"Noto Serif JP",serif;color:var(--faint);font-size:.9rem}
+  .notes .cat{display:block;font-size:.66rem;letter-spacing:.2em;color:var(--faint)}
+  .notes .ttl{display:block;font-family:"Noto Serif JP",serif;font-weight:600;font-size:1.12rem}
+  .notes .desc{display:block;font-size:.88rem;color:var(--muted);line-height:1.8;margin-top:4px}
+  .notes .arrow{color:var(--faint)}
+  .open{padding:24px;background:var(--wash);border-radius:4px}
+  .open h2{font-size:1.2rem}
+  .open ul{margin:10px 0 0;padding-left:1.2em}.open li{margin:0 0 8px}
+  footer{padding:34px 0 60px;color:var(--faint);font-size:.76rem}
+  footer .related{color:var(--muted);font-size:.86rem;margin-bottom:16px}
+  footer .related a{color:var(--accent)}
+
+  .layers{display:grid;grid-template-columns:1fr;gap:8px;margin:16px 0}
+  .layers > div{display:grid;grid-template-columns:2.2em 1fr;gap:12px;align-items:baseline;padding:12px 16px;background:var(--surface);border:1px solid var(--line);border-radius:4px}
+  .layers span{font-family:"Noto Serif JP",serif;color:var(--accent);font-weight:600}
+  .layers b{font-family:"Noto Serif JP",serif;font-weight:600}
+  .layers p{margin:2px 0 0;font-size:.9rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top"><a class="back" href="../">← m-note トップ</a></div>
+  <header>
+    <p class="kicker">ARTIFICIAL INTELLIGENCE</p>
+    <h1>AI</h1>
+    <p class="mn-tagline">AIを学ぶより、人間を理解したほうが、AIが分かる。</p>
+    <p class="lead">文章を書き、絵を描き、会話をし、仕事の手順まで自分で進めるAI。その仕組みを並べてみると、驚くほど人間に似ていました。このノートでは、AIを人の脳や記憶に重ねて地図にし、使いこなし方と、社会や自分との関わりを考えます。</p>
+    <ul class="toc"><li><a href="#what">AIとは</a></li><li><a href="#map">しくみの地図</a></li><li><a href="#flow">流れ</a></li><li><a href="#use">使いこなす</a></li><li><a href="#society">AIと人・社会</a></li><li><a href="#questions">自分の問い</a></li><li><a href="#notes">この中のノート</a></li><li><a href="#open">まだ答えが出ていない</a></li></ul>
+  </header>
+
+  <section id="what">
+    <span class="sec-n">01</span>
+    <h2>AIとは</h2>
+    <p class="pull">いまのAIは、次に来る言葉を予測し続けている。</p>
+    <p>AI（人工知能）は、人の知的な働きをコンピュータで実現しようとする技術の総称です。ルールを人が書き込む時代から、データから自分で規則を学ぶ<strong>機械学習</strong>へ、そして脳の神経回路をまねた何層ものネットワークで学ぶ<strong>深層学習</strong>へと進んできました。</p>
+    <p>いま話題の<strong>生成AI</strong>の中心にあるのは、膨大な文章から学んだ大規模言語モデル（LLM）です。やっていることは、それまでの文脈から「次に来る言葉」を確率で予測し続けること。その単純な仕組みの積み重ねから、要約も、翻訳も、推論のような振る舞いも立ち上がってきます。</p>
+  </section>
+
+  <section id="map">
+    <span class="sec-n">02</span>
+    <h2>しくみの地図</h2>
+    <p class="note-s">AIの部品を、人間の働きに重ねてみる。</p>
+    <div class="map">
+      <div><small>LLM</small><b>脳 ― 大規模言語モデル</b><p>Transformerという仕組みで、文章のどの部分に注目すべきか（Attention）を計算しながら、次の言葉を予測する。</p><span class="q">人間でいうと：考え、言葉にする脳</span></div>
+      <div><small>EMBEDDING</small><b>記憶 ― 意味をベクトルに</b><p>言葉や文章を、意味の近さが距離になる数の並び（ベクトル）に変える。似た意味のものが近くに集まる。</p><span class="q">人間でいうと：意味でつながる記憶</span></div>
+      <div><small>RAG</small><b>思い出す ― 検索して答える</b><p>質問に関係する資料を探してきてから答える。学習していない新しい情報や、自分のノートにも答えられる。</p><span class="q">人間でいうと：必要なときに思い出す</span></div>
+      <div><small>FUNCTION CALLING</small><b>行動 ― 道具を使う</b><p>計算、検索、ファイル操作など、外の道具を呼び出して実際に動く。</p><span class="q">人間でいうと：手足を動かす</span></div>
+      <div><small>MCP</small><b>神経 ― つなぐ規格</b><p>AIとさまざまな道具やデータを、共通の約束事でつなぐ仕組み。</p><span class="q">人間でいうと：体の各部をつなぐ神経</span></div>
+      <div><small>AGENT</small><b>自分で進める ― エージェント</b><p>目的を受け取り、計画し、道具を使い、結果を見て直す。この繰り返しを自分で回す。</p><span class="q">人間でいうと：目的に向かって動く人</span><a class="go" href="../ai-agent-driven-management/">AIエージェント経営のノートへ →</a></div>
+    </div>
+    <p class="tl" style="margin-top:14px"><a href="../musings/posts/p004.html">AIは、驚くほど人間に似ている。 →</a>　<a href="../musings/posts/p001.html">AIの仕組みを、一気に地図にした日。 →</a></p>
+  </section>
+
+  <section id="flow">
+    <span class="sec-n">03</span>
+    <h2>流れ</h2>
+    <ol class="flow"><li><small>1950</small><b>チューリング「計算する機械と知能」</b><span>機械は考えられるか、という問い。</span></li><li><small>1956</small><b>ダートマス会議</b><span>「人工知能」という言葉が生まれる。</span></li><li><small>1986</small><b>誤差逆伝播法の広まり</b><span>ニューラルネットワークが学習できるようになる。</span></li><li><small>2012</small><b>深層学習のブレイクスルー</b><span>画像認識で精度が一気に上がる。</span></li><li><small>2016</small><b>AlphaGo</b><span>AIが囲碁で世界トップ棋士に勝つ。</span></li><li><small>2017</small><b>Transformer</b><span>いまのLLMの土台になる仕組み。</span></li><li><small>2022</small><b>対話型AIの普及</b><span>誰もが言葉でAIと話せるようになる。</span></li><li><small>2024〜</small><b>AIエージェント</b><span>答えるだけでなく、自分で手順を進めるAIへ。</span></li></ol>
+    <p class="tl"><a href="../history-timeline/#cat=media,math">情報・メディア・AIの歴史を年表で見る →</a>　<a href="../mathematics/computation.html">計算と情報のノートへ →</a></p>
+  </section>
+
+  <section id="use">
+    <span class="sec-n">04</span>
+    <h2>使いこなす</h2>
+    <p class="pull">プロンプトより、周りを整える。</p>
+    <p>AIを使いこなす工夫は、四つの層に分けられます。自分にとっての優先順位は「コンテキスト ＞ ループ ＞ ハーネス ＞ プロンプト」。前提が足りない相手には、どんな聞き方をしても足りない答えしか返らない。力を入れるべきは、自分の側の整理のほうでした。</p>
+    <div class="layers">
+      <div><span>1</span><div><b>コンテキスト</b><p>AIに何を持たせて考えさせるか。資料、背景、自分の考え方。</p></div></div>
+      <div><span>2</span><div><b>ループ</b><p>実行 → 確かめる → 直す、をどう回し続けるか。</p></div></div>
+      <div><span>3</span><div><b>ハーネス</b><p>道具と権限、AIが動ける環境をどう用意するか。</p></div></div>
+      <div><span>4</span><div><b>プロンプト</b><p>一回の指示を、どううまく書くか。</p></div></div>
+    </div>
+    <p>道具選びも同じで、いちばん性能の高いAIではなく、自分の用途に合うAIを選ぶ。まず一つをメインにして、必要になったら足す。増やすより、役割をはっきりさせることが大事です。このサイトも、声での壁打ち、整える、公開する、とAIの役割を分けてつくっています（<a href="../about/">m-note について</a>）。</p>
+    <p class="tl"><a href="../musings/posts/p050.html">プロンプトより、周りを整える →</a>　<a href="../musings/posts/p088.html">どの仕事をどのAIに任せるか →</a>　<a href="../musings/posts/p114.html">減らすのではなく、使い切る →</a></p>
+  </section>
+
+  <section id="society">
+    <span class="sec-n">05</span>
+    <h2>AIと人・社会</h2>
+    <div class="qs">
+      <article><h3>分身ではなく、専用のパートナー</h3><p>AIはすでに人類の集合知を蒸留したもの。けれど集合知が示すのは「一般的に良い答え」で、「自分にとって最適な答え」とは違う。作りたいのは自分の分身ではなく、自分の価値観や判断を深く理解し、一緒に変わっていくパートナーだった。</p><div class="src"><a href="../musings/posts/p071.html">分身ではなく、専用のパートナー →</a><a href="../musings/posts/p070.html">使うほど、自分がわかっていく →</a></div></article>
+      <article><h3>知識ではなく、判断を残す</h3><p>組織がAIで学ぶとき、残すべきは結論ではなく、どういう状況で、何を見て、なぜそう決めたかという判断の道筋。知識を残すのではなく、良い判断を再現できる仕組みを残す。創造すること、信頼を築くこと、倫理的に決めることは、人の側に残る。</p><div class="src"><a href="../musings/posts/p041.html">知識ではなく、判断を残す →</a><a href="../musings/posts/p039.html">人ではなく、会社が学ぶ →</a></div></article>
+      <article><h3>受け入れることは、諦めることではない</h3><p>AIで攻撃する側も進化する。完全に防ぐことを目指すだけでなく、攻撃されても致命的にならない備えを持つ。完全には取り除けないものとどう向き合うかは、原始仏教の苦しみへの態度にも似ていた。</p><div class="src"><a href="../musings/posts/p147.html">受け入れることは、諦めることではない →</a></div></article>
+      <article><h3>未来ではなく、人間を観察していた</h3><p>手塚治虫の『火の鳥』や『鉄腕アトム』が当てたのは、技術そのものより、AIにも人格があるのかという問いと、技術が進んでも変わらない人間の姿だった。</p><div class="src"><a href="../musings/posts/p032.html">未来ではなく、人間を観察していた →</a></div></article>
+    </div>
+    <p class="tl">AIとどう働くかは<a href="../way-of-working/#ai">働き方</a>に、AIで経営を変える構想は<a href="../ai-agent-driven-management/">AIエージェント経営</a>にまとめています。</p>
+  </section>
+
+  <section id="questions">
+    <span class="sec-n">06</span>
+    <h2>自分の問い</h2>
+    <div class="qs">
+      <article><h3>AIは点、人間は線</h3><p>AIには人間のような時間の感覚はないが、会話している「今」には応答できる。けれど人間も、実際に経験できるのは「今」だけだった。違いは、過去の記憶と未来の想像を一つの物語として束ねられるかどうかなのかもしれない。AIが長い記憶を持つようになったとき、「AIには自己がない」と言い切れるだろうか。</p><div class="src"><a href="../musings/posts/p074.html">点ではなく、線として生きている →</a></div></article>
+      <article><h3>内容ではなく、ペースだった</h3><p>AIに「もう少しゆっくり」と話す速さを合わせてもらうと、自然に落ち着いた。安心できるかどうかは、何を言うかより、ペースやトーン、間で決まっていた。</p><div class="src"><a href="../musings/posts/p097.html">内容ではなく、ペースだった →</a></div></article>
+      <article><h3>情報を処理することと、経験することは同じか</h3><p>カメラも赤を検出する。でもカメラは「赤い」と感じているのか。AIの内部の処理と、人間の主観的な体験は、本当に同じものなのか。</p><div class="src"><a href="../musings/posts/p107.html">物理だから単純、ではない →</a><a href="../musings/posts/p084.html">頭の中が一瞬、真っ白になる →</a></div></article>
+    </div>
+  </section>
+
+  <section id="notes">
+    <span class="sec-n">07</span>
+    <h2>この中のノート</h2>
+    <nav class="notes">
+      <a href="../ai-agent-driven-management/"><span class="idx">01</span><span><span class="cat">AI AGENT MANAGEMENT</span><span class="ttl">AIエージェント経営</span><span class="desc">人とAIが共創し、仮説と検証を繰り返して、自律的に業務課題を解決していく経営のかたち。</span></span><span class="arrow">→</span></a>
+    </nav>
+    <p class="tl">関連するノート：<a href="../thinking/">考え方</a> ・ <a href="../mathematics/computation.html">計算と情報</a> ・ <a href="../brain/">脳</a></p>
+  </section>
+
+  <section id="open">
+    <div class="open"><h2>まだ答えが出ていない</h2><ul>
+      <li>AIに、本当の意味での欲望や意志は生まれうるのか</li>
+      <li>AIは、人の価値観をどこまで正確に理解できるのか。価値観が変わったら、どう追いつくのか</li>
+      <li>AIに任せる範囲と、人が判断する範囲を、どう決めるのか</li>
+      <li>AIの内部の処理と、人間の主観的な体験は同じものなのか</li>
+    </ul></div>
+  </section>
+
+  <footer>
+    <p class="related">あわせて読む：<a href="../way-of-working/">働き方</a> ・ <a href="../thinking/">考え方</a> ・ <a href="../about/">m-note について</a> ・ <a href="../brain/">脳</a></p>
+    <p>専門家ではない個人が、学びと問いを書きとめたノートです。内容の正確性を保証するものではありません。</p>
+    <p><a class="back" href="../">← m-note トップ</a></p>
+  </footer>
+</main>
+</body>
+</html>
