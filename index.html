@@ -75,6 +75,12 @@
   .layers span{font-family:"Noto Serif JP",serif;color:var(--accent);font-weight:600}
   .layers b{font-family:"Noto Serif JP",serif;font-weight:600}
   .layers p{margin:2px 0 0;font-size:.9rem;color:var(--muted)}
+
+  .kinds-grp{display:flex;align-items:baseline;gap:10px;margin:28px 0 2px}
+  .kinds-grp .lab{font:600 1.15rem/1.5 "Noto Serif JP",serif}
+  .kinds-grp small{font-size:.66rem;letter-spacing:.18em;color:var(--accent);font-weight:700}
+  .map .ex{display:block;margin-top:8px;font-size:.82rem;color:var(--faint)}
+  .map .ex b{color:var(--muted);font-weight:600}
 </style>
 </head>
 <body>
@@ -85,7 +91,7 @@
     <h1>AI</h1>
     <p class="mn-tagline">AIを学ぶより、人間を理解したほうが、AIが分かる。</p>
     <p class="lead">文章を書き、絵を描き、会話をし、仕事の手順まで自分で進めるAI。その仕組みを並べてみると、驚くほど人間に似ていました。このノートでは、AIを人の脳や記憶に重ねて地図にし、使いこなし方と、社会や自分との関わりを考えます。</p>
-    <ul class="toc"><li><a href="#what">AIとは</a></li><li><a href="#map">しくみの地図</a></li><li><a href="#flow">流れ</a></li><li><a href="#use">使いこなす</a></li><li><a href="#society">AIと人・社会</a></li><li><a href="#questions">自分の問い</a></li><li><a href="#notes">この中のノート</a></li><li><a href="#open">まだ答えが出ていない</a></li></ul>
+    <ul class="toc"><li><a href="#what">AIとは</a></li><li><a href="#map">しくみの地図</a></li><li><a href="#flow">流れ</a></li><li><a href="#use">使いこなす</a></li><li><a href="#kinds">いまあるAI</a></li><li><a href="#society">AIと人・社会</a></li><li><a href="#questions">自分の問い</a></li><li><a href="#notes">この中のノート</a></li><li><a href="#open">まだ答えが出ていない</a></li></ul>
   </header>
 
   <section id="what">
@@ -133,8 +139,37 @@
     <p class="tl"><a href="../musings/posts/p050.html">プロンプトより、周りを整える →</a>　<a href="../musings/posts/p088.html">どの仕事をどのAIに任せるか →</a>　<a href="../musings/posts/p114.html">減らすのではなく、使い切る →</a></p>
   </section>
 
-  <section id="society">
+  <section id="kinds">
     <span class="sec-n">05</span>
+    <h2>いま、どんなAIがあるか</h2>
+    <p class="pull">ひとりのためのAIと、組織のためのAI。</p>
+    <p>AIは「種類」で見ると地図になります。大きくは、日々ひとりで使う<strong>個人向け</strong>と、組織の仕事に組み込む<strong>法人向け</strong>。やっていることのカテゴリごとに、代表的なサービスを並べてみます。</p>
+    <p class="note-s">2026年時点の代表例です。移り変わりの速い分野なので、名前そのものより「どんな種類があるか」を地図として見てください。</p>
+
+    <div class="kinds-grp"><span class="lab">個人向け</span><small>FOR EVERYONE</small></div>
+    <div class="map">
+      <div><small>CHAT</small><b>対話・文章</b><p>質問に答え、文章を書き、相談にのる万能の相棒。多くの人の入口。</p><span class="ex"><b>代表例：</b>ChatGPT ・ Claude ・ Gemini</span></div>
+      <div><small>IMAGE</small><b>画像をつくる</b><p>言葉からイラストや写真、デザインを生み出す。</p><span class="ex"><b>代表例：</b>Midjourney ・ DALL·E ・ Adobe Firefly ・ Stable Diffusion</span></div>
+      <div><small>VIDEO / AUDIO</small><b>動画・音声・音楽</b><p>映像やナレーション、曲まで生成する。</p><span class="ex"><b>代表例：</b>Sora ・ Runway ・ ElevenLabs ・ Suno</span></div>
+      <div><small>SEARCH</small><b>調べる</b><p>出典をたどりながら、要約して答えるAI検索。</p><span class="ex"><b>代表例：</b>Perplexity ・ Gemini ・ ChatGPT search</span></div>
+      <div><small>CREATE / CODE</small><b>つくる・コード</b><p>アプリや資料づくり、プログラミングを手伝う。</p><span class="ex"><b>代表例：</b>GitHub Copilot ・ Cursor ・ v0</span></div>
+      <div><small>DEVICE</small><b>暮らし・スマホ</b><p>端末に溶け込み、翻訳や日々の操作を助ける。</p><span class="ex"><b>代表例：</b>Apple Intelligence ・ Gemini（Android）・ DeepL</span></div>
+    </div>
+
+    <div class="kinds-grp"><span class="lab">法人向け</span><small>FOR BUSINESS</small></div>
+    <div class="map">
+      <div><small>COPILOT</small><b>業務コパイロット</b><p>メール・資料・表計算を、社内データごと手伝う。</p><span class="ex"><b>代表例：</b>Microsoft 365 Copilot ・ Gemini for Workspace ・ Notion AI</span></div>
+      <div><small>DEV</small><b>開発支援</b><p>コード生成からレビュー、自律的な実装まで。</p><span class="ex"><b>代表例：</b>GitHub Copilot ・ Cursor ・ Claude Code ・ Devin</span></div>
+      <div><small>SUPPORT</small><b>顧客対応</b><p>問い合わせに自動で一次応答し、担当へつなぐ。</p><span class="ex"><b>代表例：</b>Intercom Fin ・ Zendesk AI ・ Salesforce Einstein</span></div>
+      <div><small>MEETING</small><b>会議・記録</b><p>文字起こしと要約で、議事録を自動でつくる。</p><span class="ex"><b>代表例：</b>Otter ・ Fireflies ・ Notta ・ tl;dv</span></div>
+      <div><small>PLATFORM</small><b>基盤モデル・API</b><p>自社のサービスやアプリに組み込むための土台。</p><span class="ex"><b>代表例：</b>OpenAI API ・ Claude API ・ Google Vertex AI ・ Azure OpenAI</span></div>
+      <div><small>AGENT</small><b>自律エージェント</b><p>目的を渡すと、計画し道具を使い、手順まで自分で進める。</p><span class="ex"><b>代表例：</b>各社のエージェント基盤</span><a class="go" href="../ai-agent-driven-management/">AIエージェント経営のノートへ →</a></div>
+    </div>
+    <p class="tl" style="margin-top:16px"><a href="#use">自分の用途に合う一台を選ぶ →</a></p>
+  </section>
+
+  <section id="society">
+    <span class="sec-n">06</span>
     <h2>AIと人・社会</h2>
     <div class="qs">
       <article><h3>分身ではなく、専用のパートナー</h3><p>AIはすでに人類の集合知を蒸留したもの。けれど集合知が示すのは「一般的に良い答え」で、「自分にとって最適な答え」とは違う。作りたいのは自分の分身ではなく、自分の価値観や判断を深く理解し、一緒に変わっていくパートナーだった。</p><div class="src"><a href="../musings/posts/p071.html">分身ではなく、専用のパートナー →</a><a href="../musings/posts/p070.html">使うほど、自分がわかっていく →</a></div></article>
@@ -146,7 +181,7 @@
   </section>
 
   <section id="questions">
-    <span class="sec-n">06</span>
+    <span class="sec-n">07</span>
     <h2>自分の問い</h2>
     <div class="qs">
       <article><h3>AIは点、人間は線</h3><p>AIには人間のような時間の感覚はないが、会話している「今」には応答できる。けれど人間も、実際に経験できるのは「今」だけだった。違いは、過去の記憶と未来の想像を一つの物語として束ねられるかどうかなのかもしれない。AIが長い記憶を持つようになったとき、「AIには自己がない」と言い切れるだろうか。</p><div class="src"><a href="../musings/posts/p074.html">点ではなく、線として生きている →</a></div></article>
@@ -156,7 +191,7 @@
   </section>
 
   <section id="notes">
-    <span class="sec-n">07</span>
+    <span class="sec-n">08</span>
     <h2>この中のノート</h2>
     <nav class="notes">
       <a href="../ai-agent-driven-management/"><span class="idx">01</span><span><span class="cat">AI AGENT MANAGEMENT</span><span class="ttl">AIエージェント経営</span><span class="desc">人とAIが共創し、仮説と検証を繰り返して、自律的に業務課題を解決していく経営のかたち。</span></span><span class="arrow">→</span></a>
